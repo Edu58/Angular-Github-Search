@@ -1,6 +1,6 @@
 <mat-tab-group mat-align-tabs="center" animationDuration="1000ms">
   <mat-tab label="search user">
-      <form>
+      <form #form="ngForm" (ngSubmit)="getTheUser (form)">
           <mat-form-field appearance="outline">
             <mat-label>Enter username</mat-label>
             <input matInput placeholder="Placeholder" name="username" required="true" class="text-light" ngModel>
