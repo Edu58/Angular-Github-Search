@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  Authorization: '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'
 };
