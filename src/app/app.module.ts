@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { CardGridComponent } from './Components/card-grid/card-grid.component';
 import { CardComponent } from './Components/card/card.component';
+import { GetRepoInfoService } from './Services/get-repo-info.service';
+import { GetUserInfoService } from './Services/get-user-info.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { CardComponent } from './Components/card/card.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FontAwesomeModule,
     MatToolbarModule,
     MatTabsModule,
@@ -34,7 +38,7 @@ import { CardComponent } from './Components/card/card.component';
     MatButtonModule,
     FormsModule
   ],
-  providers: [],
+  providers: [GetRepoInfoService,GetUserInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
