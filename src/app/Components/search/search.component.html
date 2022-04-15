@@ -1,4 +1,24 @@
 <mat-tab-group mat-align-tabs="center" animationDuration="1000ms">
-  <mat-tab label="Search user">Search user</mat-tab>
-  <mat-tab label="Search repository">Search repository</mat-tab>
+  <mat-tab label="Search user">
+      <form>
+          <mat-form-field appearance="outline">
+            <mat-label>Enter username</mat-label>
+            <input matInput placeholder="Placeholder" name="username" required="true" class="text-light" ngModel>
+            <mat-hint>You can omit the @</mat-hint>
+          </mat-form-field>
+
+          <button mat-raised-button type="submit" color="primary">search</button>
+      </form>
+  </mat-tab>
+
+  <mat-tab label="Search repository">
+      <form>
+        <mat-form-field appearance="outline">
+          <mat-label>Enter a repo name</mat-label>
+          <input matInput placeholder="Placeholder" name="repo" required="true" class="text-light" ngModel>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" color="primary">search</button>
+      </form>
+  </mat-tab>
 </mat-tab-group>
