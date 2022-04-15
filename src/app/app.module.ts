@@ -12,11 +12,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'; 
 import { MatButtonModule } from '@angular/material/button'; 
 import { FormsModule } from '@angular/forms';
+import { CardGridComponent } from './Components/card-grid/card-grid.component';
+import { CardComponent } from './Components/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    CardGridComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
