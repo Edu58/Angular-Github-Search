@@ -1,1 +1,23 @@
-<p>card works!</p>
+<mat-card class="materialcard my-2">
+    <mat-card-title>Repo: {{ repoName }}</mat-card-title>
+    <mat-card-subtitle>Owner: {{ repoOwner }}</mat-card-subtitle>
+  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content>
+    <p>
+      Description: {{ repoDescription }}
+    </p>
+    <p>Languages: {{ repoLanguage }}</p>
+    <p>Visibility: {{ repoVisibility }}</p>
+    <p>License: {{ repoLicense }}</p>
+    <p>Allows Forking: {{ repoAllowForking }}</p>
+    <p>Forks: {{ repoForks }}</p>
+    <p>Size: {{ repoSize }} KB</p>
+  </mat-card-content>
+  <mat-card-actions>
+    
+    <a [href]="repoUrl" class="text-decoration-none" target="_blank">
+        <button mat-stroked-button>Visit Repo</button>
+    </a>
+  </mat-card-actions>
+</mat-card>
+

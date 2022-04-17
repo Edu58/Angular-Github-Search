@@ -24,5 +24,9 @@
 </mat-tab-group>
 
 <div class="mt-5">
-    <app-card-grid></app-card-grid>
+    <div class="row">
+      <div class="col-md-4 d-flex justify-content-center align-items-center" *ngFor="let result of resultsFromSearch">
+        <app-card-grid [receivedResult]="result"></app-card-grid>
+      </div>
+    </div>
 </div>

@@ -1,5 +1,6 @@
 export class Repomodel {
 
+    repoName: string
     repoOwner: string
     repoUrl: string
     repoDescription: string
@@ -11,7 +12,8 @@ export class Repomodel {
     repoForks: number
 
 
-    constructor ( owner: string, repoUrl: string, description: string = 'Not provided', size: number, language: string, license: string = 'Not provided', allowForking: boolean, visibility: string, forks: number ) {
+    constructor ( name: string, owner: string, repoUrl: string, description: string = 'Not provided', size: number, language: string, license: string = 'Not provided', allowForking: boolean, visibility: string, forks: number ) {
+        this.repoName = name
         this.repoOwner = owner
         this.repoUrl = repoUrl
         this.repoDescription = description

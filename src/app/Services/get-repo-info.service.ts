@@ -23,6 +23,7 @@ export class GetRepoInfoService {
       this.api.get( this.baseUrl + repo, this.options ).toPromise()
         .then( ( data: any ) => {
           data.items.map( ( obj: any ) => {
+            let name: string = obj.name 
             let owner: string = obj.owner.login
             let description!: string
             let repoUrl: string = obj.html_url
@@ -43,7 +44,7 @@ export class GetRepoInfoService {
               description = obj.description
             }
 
-            this.repoResults.push( new Repomodel( owner, repoUrl, description, size, language, license, allowForking, visibility, forks ) )
+            this.repoResults.push( new Repomodel(name, owner, repoUrl, description, size, language, license, allowForking, visibility, forks ) )
         
             resolve()
         

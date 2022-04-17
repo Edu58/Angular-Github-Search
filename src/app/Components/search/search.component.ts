@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
+import { Repomodel } from 'src/app/Models/repomodel';
+import { Repouser } from 'src/app/Models/repouser';
 import { GetRepoInfoService } from 'src/app/Services/get-repo-info.service';
 import { GetUserInfoService } from 'src/app/Services/get-user-info.service';
 
@@ -10,7 +12,7 @@ import { GetUserInfoService } from 'src/app/Services/get-user-info.service';
 } )
 export class SearchComponent implements OnInit {
 
-  results: any
+  resultsFromSearch!: Array<Repomodel | Repouser>
 
   constructor ( private userApi: GetUserInfoService, private repoApi: GetRepoInfoService ) { }
 
@@ -23,9 +25,9 @@ export class SearchComponent implements OnInit {
 
   getRepo ( form: NgForm ) {
     this.repoApi.searchRepo( form.value.repo ).then(
-      ( results: any ) => {
-        this.results = this.repoApi.repoResults
-        console.log(this.results)
+      () => {
+        this.resultsFromSearch = this.repoApi.repoResults
+        console.log(this.resultsFromSearch)
       }
     )
   }

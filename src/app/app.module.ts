@@ -17,6 +17,7 @@ import { CardGridComponent } from './Components/card-grid/card-grid.component';
 import { CardComponent } from './Components/card/card.component';
 import { GetRepoInfoService } from './Services/get-repo-info.service';
 import { GetUserInfoService } from './Services/get-user-info.service';
+import {MatCardModule} from '@angular/material/card'; 
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { GetUserInfoService } from './Services/get-user-info.service';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   providers: [GetRepoInfoService,GetUserInfoService],
   bootstrap: [AppComponent]
