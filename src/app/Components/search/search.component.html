@@ -1,5 +1,5 @@
-<mat-tab-group mat-align-tabs="center" animationDuration="1000ms">
-  <mat-tab label="search user">
+<mat-tab-group mat-align-tabs="center" animationDuration="500ms">
+  <mat-tab label="search user" id="top">
       <form #form="ngForm" (ngSubmit)="getTheUser (form)">
           <mat-form-field appearance="outline">
             <mat-label>Enter username</mat-label>
@@ -25,7 +25,7 @@
 
 <div class="mt-5">
     <div class="row">
-      <div class="col-md-4 d-flex justify-content-center align-items-center" *ngFor="let result of resultsFromSearch">
+      <div class="col-md-4 d-flex justify-content-center" *ngFor="let result of resultsFromSearch">
         <app-card-grid [receivedResult]="result"></app-card-grid>
       </div>
     </div>
