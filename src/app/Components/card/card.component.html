@@ -1,6 +1,6 @@
 <mat-card class="materialcard my-2">
     <mat-card-title *ngIf="repoName">Repo: {{ repoName }}</mat-card-title>
-    <mat-card-title *ngIf="name">Repo: {{ name }}</mat-card-title>
+    <mat-card-title *ngIf="name">Username: {{ name }}</mat-card-title>
     <mat-card-subtitle *ngIf="repoOwner">Owner: {{ repoOwner }}</mat-card-subtitle>
   <img mat-card-image *ngIf="avatar" [src]="avatar" alt="Profile picture">
   <mat-card-content>

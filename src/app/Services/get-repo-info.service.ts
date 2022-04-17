@@ -22,39 +22,15 @@ export class GetRepoInfoService {
     return new Promise<void>( ( resolve, reject ) => {
       this.api.get( this.baseUrl + repo, this.options ).toPromise()
         .then( ( data: any ) => {
-          data.items.map( ( obj: any ) => {
-            let name: string = obj.name 
-            let owner: string = obj.owner.login
-            let description!: string
-            let repoUrl: string = obj.html_url
-            let size: number = obj.size
-            let license!: string
-            let language: string = obj.language
-            let allowForking: boolean = obj.allow_forking
-            let visibility: string = obj.visibility
-            let forks: number = obj.forks
-
-            if ( obj.license && obj.license.name )
-            {
-              license = obj.license.name
-            }
-
-            if ( obj.description )
-            {
-              description = obj.description
-            }
-
-            this.repoResults.push( new Repomodel(name, owner, repoUrl, description, size, language, license, allowForking, visibility, forks ) )
+          
+          this.repoResults = data
+          resolve()
         
-            resolve()
+        } ), ( err: string ) => {
+          console.error( err )
+          reject()
+        }
+    } )
         
-          } ), ( err: string ) => {
-            console.error( err )
-            reject()
-          } 
-        } )
-        
-    }
-    )
   }
 }

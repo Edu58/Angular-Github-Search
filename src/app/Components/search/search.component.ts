@@ -12,7 +12,7 @@ import { GetUserInfoService } from 'src/app/Services/get-user-info.service';
 } )
 export class SearchComponent implements OnInit {
 
-  resultsFromSearch!: any
+  resultsFromSearch: any = []
 
   constructor ( private userApi: GetUserInfoService, private repoApi: GetRepoInfoService ) { }
 
@@ -23,8 +23,20 @@ export class SearchComponent implements OnInit {
 
     this.userApi.searchUser( form.value.username ).then(
       () => {
-        this.resultsFromSearch = this.userApi.users
-        console.log(this.resultsFromSearch)
+
+        this.resultsFromSearch.splice(0, this.resultsFromSearch.length)
+
+        let response: any = this.userApi.users
+
+        response.items.map( ( obj: any ) => {
+            let name: string = obj.login
+            let avatar: string = obj.avatar_url
+            let profile: string = obj.html_url
+
+            this.resultsFromSearch.push(new User(name, avatar, profile))
+          })
+
+        console.log( this.resultsFromSearch )
       }
     )
   }
@@ -33,8 +45,38 @@ export class SearchComponent implements OnInit {
 
     this.repoApi.searchRepo( form.value.repo ).then(
       () => {
-        this.resultsFromSearch = this.repoApi.repoResults
-        console.log(this.resultsFromSearch)
+
+        this.resultsFromSearch.splice(0, this.resultsFromSearch.length)
+
+        let data: any = this.repoApi.repoResults
+
+        data.items.map( ( obj: any ) => {
+          let name: string = obj.name
+          let owner: string = obj.owner.login
+          let description!: string
+          let repoUrl: string = obj.html_url
+          let size: number = obj.size
+          let license!: string
+          let language: string = obj.language
+          let allowForking: boolean = obj.allow_forking
+          let visibility: string = obj.visibility
+          let forks: number = obj.forks
+
+          if ( obj.license && obj.license.name )
+          {
+            license = obj.license.name
+          }
+
+          if ( obj.description )
+          {
+            description = obj.description
+          }
+
+          this.resultsFromSearch.push( new Repomodel( name, owner, repoUrl, description, size, language, license, allowForking, visibility, forks ) )
+        }
+        )
+      
+         console.log( this.resultsFromSearch )
       }
     )
   }

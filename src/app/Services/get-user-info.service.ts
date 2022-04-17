@@ -18,19 +18,13 @@ export class GetUserInfoService {
 
   constructor ( private http: HttpClient ) { }
   
-  searchUser (user: string): Promise<void> {
+  searchUser (user: string) {
     return new Promise<void>( ( resolve, reject ) => {
       this.http.get( this.baseUrl + user, this.options ).toPromise()
         .then( ( data: any ) => {
-          data.items.map( ( obj: any ) => {
-            let name: string = obj.login
-            let avatar: string = obj.avatar_url
-            let profile: string = obj.html_url
-
-            this.users.push(new User(name, avatar, profile))
-          })
+          
+          this.users = data
           resolve()
-
         } ), ( error: any )=> {
           console.error( error )
           reject()
