@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
 import { Repomodel } from 'src/app/Models/repomodel';
-import { Repouser } from 'src/app/Models/repouser';
+import { User } from 'src/app/Models/repouser';
 import { GetRepoInfoService } from 'src/app/Services/get-repo-info.service';
 import { GetUserInfoService } from 'src/app/Services/get-user-info.service';
 
@@ -12,7 +12,7 @@ import { GetUserInfoService } from 'src/app/Services/get-user-info.service';
 } )
 export class SearchComponent implements OnInit {
 
-  resultsFromSearch!: Array<Repomodel | Repouser>
+  resultsFromSearch!: Array<Repomodel | User>
 
   constructor ( private userApi: GetUserInfoService, private repoApi: GetRepoInfoService ) { }
 

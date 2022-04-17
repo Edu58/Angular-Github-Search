@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Repomodel } from 'src/app/Models/repomodel';
-import { Repouser } from 'src/app/Models/repouser';
+import { User } from 'src/app/Models/repouser';
 
 @Component({
   selector: 'app-card-grid',
@@ -9,7 +9,7 @@ import { Repouser } from 'src/app/Models/repouser';
 })
 export class CardGridComponent implements OnInit {
 
-  @Input() receivedResult!: Repomodel | Repouser | any
+  @Input() receivedResult!: Repomodel | User | any
 
   constructor() { }
 

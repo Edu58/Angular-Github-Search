@@ -1,4 +1,12 @@
-export class Repouser {
+export class User {
 
-    constructor(){}
+    userName: string
+    avatarUrl: string
+    profileUrl: string
+
+    constructor ( name: string, avatar: string, url: string ) {
+        this.userName = name
+        this.avatarUrl = url
+        this.profileUrl = url 
+    }
 }
