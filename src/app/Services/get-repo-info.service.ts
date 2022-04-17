@@ -13,7 +13,7 @@ export class GetRepoInfoService {
     Authorization: environment.Authorization
   }
 
-  repoResults: Array<Repomodel> = []
+  repoResults: Repomodel[] = []
 
   constructor ( private api: HttpClient ) { }
   
