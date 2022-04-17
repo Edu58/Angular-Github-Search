@@ -17,7 +17,10 @@ export class CardComponent implements OnInit {
   @Input() repoAllowForking!: boolean
   @Input() repoVisibility!: string
   @Input() repoForks!: number
-  
+  @Input() name!: string
+  @Input() profile!: string
+  @Input() avatar!: string
+
   constructor () { }
 
   ngOnInit (): void {

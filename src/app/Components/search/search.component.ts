@@ -12,8 +12,7 @@ import { GetUserInfoService } from 'src/app/Services/get-user-info.service';
 } )
 export class SearchComponent implements OnInit {
 
-  resultsFromSearch!: Repomodel[]
-  userResults!: User[]
+  resultsFromSearch!: any
 
   constructor ( private userApi: GetUserInfoService, private repoApi: GetRepoInfoService ) { }
 
@@ -21,19 +20,19 @@ export class SearchComponent implements OnInit {
   }
 
   getTheUser ( form: NgForm ) {
+
     this.userApi.searchUser( form.value.username ).then(
       () => {
-        this.resultsFromSearch.splice(1, this.resultsFromSearch.length)
-        this.userResults = this.userApi.users
-        console.log(this.userResults)
+        this.resultsFromSearch = this.userApi.users
+        console.log(this.resultsFromSearch)
       }
     )
   }
 
   getRepo ( form: NgForm ) {
+
     this.repoApi.searchRepo( form.value.repo ).then(
       () => {
-        this.userResults.splice(1, this.userResults.length)
         this.resultsFromSearch = this.repoApi.repoResults
         console.log(this.resultsFromSearch)
       }

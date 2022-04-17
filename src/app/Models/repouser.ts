@@ -6,7 +6,7 @@ export class User {
 
     constructor ( name: string, avatar: string, url: string ) {
         this.userName = name
-        this.avatarUrl = url
+        this.avatarUrl = avatar
         this.profileUrl = url 
     }
 }

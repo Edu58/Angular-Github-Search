@@ -1,22 +1,27 @@
 <mat-card class="materialcard my-2">
-    <mat-card-title>Repo: {{ repoName }}</mat-card-title>
-    <mat-card-subtitle>Owner: {{ repoOwner }}</mat-card-subtitle>
-  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-title *ngIf="repoName">Repo: {{ repoName }}</mat-card-title>
+    <mat-card-title *ngIf="name">Repo: {{ name }}</mat-card-title>
+    <mat-card-subtitle *ngIf="repoOwner">Owner: {{ repoOwner }}</mat-card-subtitle>
+  <img mat-card-image *ngIf="avatar" [src]="avatar" alt="Profile picture">
   <mat-card-content>
-    <p>
+    <p *ngIf="repoDescription">
       Description: {{ repoDescription }}
     </p>
-    <p>Languages: {{ repoLanguage }}</p>
-    <p>Visibility: {{ repoVisibility }}</p>
-    <p>License: {{ repoLicense }}</p>
-    <p>Allows Forking: {{ repoAllowForking }}</p>
-    <p>Forks: {{ repoForks }}</p>
-    <p>Size: {{ repoSize }} KB</p>
+    <p *ngIf="repoLanguage">Languages: {{ repoLanguage }}</p>
+    <p *ngIf="repoVisibility">Visibility: {{ repoVisibility }}</p>
+    <p *ngIf="repoLicense">License: {{ repoLicense }}</p>
+    <p *ngIf="repoAllowForking">Allows Forking: {{ repoAllowForking }}</p>
+    <p *ngIf="repoForks">Forks: {{ repoForks }}</p>
+    <p *ngIf="repoSize">Size: {{ repoSize }} KB</p>
   </mat-card-content>
   <mat-card-actions>
     
-    <a [href]="repoUrl" class="text-decoration-none" target="_blank">
+    <a *ngIf="repoUrl" [href]="repoUrl" class="text-decoration-none" target="_blank">
         <button mat-stroked-button>Visit Repo</button>
+    </a>
+
+    <a *ngIf="profile" [href]="profile" class="text-decoration-none" target="_blank">
+      <button mat-stroked-button>Visit Profile</button>
     </a>
   </mat-card-actions>
 </mat-card>

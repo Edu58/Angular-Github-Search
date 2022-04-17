@@ -9,7 +9,8 @@ import { User } from 'src/app/Models/repouser';
 })
 export class CardGridComponent implements OnInit {
 
-  @Input() receivedResult!: Repomodel | User | any
+  @Input() receivedResult!: any
+  // @Input() receivedUserResult!: User | any
 
   constructor() { }
 

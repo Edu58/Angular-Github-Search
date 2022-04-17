@@ -17,7 +17,7 @@ import { CardGridComponent } from './Components/card-grid/card-grid.component';
 import { CardComponent } from './Components/card/card.component';
 import { GetRepoInfoService } from './Services/get-repo-info.service';
 import { GetUserInfoService } from './Services/get-user-info.service';
-import {MatCardModule} from '@angular/material/card'; 
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
