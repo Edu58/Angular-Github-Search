@@ -12,7 +12,7 @@
   </mat-tab>
 
   <mat-tab label="search repository">
-      <form>
+      <form #repoForm="ngForm" (ngSubmit)="getRepo(repoForm)">
         <mat-form-field appearance="outline">
           <mat-label>Enter a repo name</mat-label>
           <input matInput placeholder="Placeholder" name="repo" required="true" class="text-light" ngModel>
