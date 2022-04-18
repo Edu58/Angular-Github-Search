@@ -76,8 +76,6 @@ export class SearchComponent implements OnInit {
           this.resultsFromSearch.push( new Repomodel( name, owner, repoUrl, description, size, language, license, allowForking, visibility, forks,created, updated ) )
         }
         )
-      
-         console.log( this.resultsFromSearch )
       }
     )
   }
