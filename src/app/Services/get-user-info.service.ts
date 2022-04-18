@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
 import { User } from '../Models/repouser';
 
 @Injectable({
@@ -12,7 +11,7 @@ export class GetUserInfoService {
   users: User[] = []
 
   baseUrl: string = 'https://api.github.com/search/users?q=' 
-  
+
   options: Object = {
     Authorization: environment.Authorization
   }

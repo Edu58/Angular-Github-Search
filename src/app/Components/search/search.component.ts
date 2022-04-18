@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, NgModel } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Repomodel } from 'src/app/Models/repomodel';
 import { User } from 'src/app/Models/repouser';
 import { GetRepoInfoService } from 'src/app/Services/get-repo-info.service';

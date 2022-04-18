@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Repomodel } from 'src/app/Models/repomodel';
-import { User } from 'src/app/Models/repouser';
 
 @Component({
   selector: 'app-card-grid',
