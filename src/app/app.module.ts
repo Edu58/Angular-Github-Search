@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,7 +13,6 @@ import { SearchComponent } from './Components/search/search.component';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { MatInputModule } from '@angular/material/input'; 
 import { MatButtonModule } from '@angular/material/button'; 
-import { FormsModule } from '@angular/forms';
 import { CardGridComponent } from './Components/card-grid/card-grid.component';
 import { CardComponent } from './Components/card/card.component';
 import { GetRepoInfoService } from './Services/get-repo-info.service';
