@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # GithubSearch
 
-![Project Image](src/assets/images/quote.png)
+![Project Image](src/assets/images/user.png)
 
 ### By: Edwin Karimi
 
@@ -18,19 +18,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description
 
-This is a simple Angular quotes applicaiton where users can view recent quotes, share their quotes, upvote or downvote quotes, and delete quotes.
+This is a GitHub search website made in Angular 13, Material Angular, Bootstrap 5 and the Github API. You can for a github user using their username or s repository using the repo. For more details on the users, profile or the repos details, the website redirects you to GitHub.
+
+![Project Image](src/assets/images/repo.png)
 
 ## Behaviour Driven Development
 
 The user is able to;
 
-- View recent votes
+- Search for GitHub user
 
-- Share their quote
+- Can't request an empty input
 
-- Upvote or Downvote a quote
+- Search for a repo
 
-- Delete a quote
+- Get repos details
 
 
 ### Requirements
@@ -45,13 +47,13 @@ The user is able to;
 - Type the following command in your terminal to clone this repository
 
 ```
-git clone https://github.com/Edu58/Angular-Quotes.git
+git clone https://github.com/Edu58/Angular-Github-Search.git
 ```
 
 If you are using SSH, use the following command
 
 ```
-git clone https://github.com/Edu58/Angular-Quotes.git
+git clone https://github.com/Edu58/Angular-Github-Search.git
 ```
 
 When you run the commands successfully, you should have a local version of this repository.
@@ -75,9 +77,9 @@ Feel free to fork the project and have fun with it. Happy coding!
 
 - HTML5
 - CSS3
-- JavaScript
 - Angular
 - Typescript
+- Material Angular
 - Bootstrap
 
 
