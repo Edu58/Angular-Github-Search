@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
 
   resultsFromSearch: any = []
 
-  constructor ( private userApi: GetUserInfoService, private repoApi: GetRepoInfoService ) { }
+  constructor ( private userApi: GetUserInfoService, private repoApi: GetRepoInfoService) { }
 
   ngOnInit (): void {
   }
@@ -33,10 +33,9 @@ export class SearchComponent implements OnInit {
             let avatar: string = obj.avatar_url
             let profile: string = obj.html_url
 
-            this.resultsFromSearch.push(new User(name, avatar, profile))
-          })
+          this.resultsFromSearch.push( new User( name, avatar, profile ) )
 
-        console.log( this.resultsFromSearch )
+          })
       }
     )
   }
@@ -61,6 +60,8 @@ export class SearchComponent implements OnInit {
           let allowForking: boolean = obj.allow_forking
           let visibility: string = obj.visibility
           let forks: number = obj.forks
+          let created: Date = new Date( obj.created_at )
+          let updated: Date = new Date(obj.updated_at)
 
           if ( obj.license && obj.license.name )
           {
@@ -72,7 +73,7 @@ export class SearchComponent implements OnInit {
             description = obj.description
           }
 
-          this.resultsFromSearch.push( new Repomodel( name, owner, repoUrl, description, size, language, license, allowForking, visibility, forks ) )
+          this.resultsFromSearch.push( new Repomodel( name, owner, repoUrl, description, size, language, license, allowForking, visibility, forks,created, updated ) )
         }
         )
       

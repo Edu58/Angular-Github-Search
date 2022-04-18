@@ -10,9 +10,11 @@ export class Repomodel {
     repoAllowForking: boolean
     repoVisibility: string
     repoForks: number
+    createdAt: Date
+    updatedOn: Date
 
 
-    constructor ( name: string, owner: string, repoUrl: string, description: string = 'Not provided', size: number, language: string, license: string = 'Not provided', allowForking: boolean, visibility: string, forks: number ) {
+    constructor ( name: string, owner: string, repoUrl: string, description: string = 'Not provided', size: number, language: string, license: string = 'Not provided', allowForking: boolean, visibility: string, forks: number, created: Date, updated: Date ) {
         this.repoName = name
         this.repoOwner = owner
         this.repoUrl = repoUrl
@@ -23,5 +25,7 @@ export class Repomodel {
         this.repoAllowForking = allowForking
         this.repoVisibility = visibility
         this.repoForks = forks
+        this.createdAt = created
+        this.updatedOn = updated
     }
 }

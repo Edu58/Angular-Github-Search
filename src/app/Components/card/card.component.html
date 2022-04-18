@@ -13,6 +13,8 @@
     <p *ngIf="repoAllowForking">Allows Forking: {{ repoAllowForking }}</p>
     <p *ngIf="repoForks">Forks: {{ repoForks }}</p>
     <p *ngIf="repoSize">Size: {{ repoSize }} KB</p>
+    <p *ngIf="createdAt">Created: {{ createdAt | date }}</p>
+    <p *ngIf="updatedOn">Updated: {{ updatedOn | date }}</p>
   </mat-card-content>
   <mat-card-actions>
     

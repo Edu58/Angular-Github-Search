@@ -12,6 +12,7 @@ export class GetUserInfoService {
   users: User[] = []
 
   baseUrl: string = 'https://api.github.com/search/users?q=' 
+  
   options: Object = {
     Authorization: environment.Authorization
   }

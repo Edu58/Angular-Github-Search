@@ -17,6 +17,8 @@ export class CardComponent implements OnInit {
   @Input() repoAllowForking!: boolean
   @Input() repoVisibility!: string
   @Input() repoForks!: number
+  @Input() createdAt!: Date
+  @Input() updatedOn!: Date
   @Input() name!: string
   @Input() profile!: string
   @Input() avatar!: string

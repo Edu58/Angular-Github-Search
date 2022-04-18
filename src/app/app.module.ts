@@ -18,13 +18,15 @@ import { CardComponent } from './Components/card/card.component';
 import { GetRepoInfoService } from './Services/get-repo-info.service';
 import { GetUserInfoService } from './Services/get-user-info.service';
 import {MatCardModule} from '@angular/material/card';
+import { UserReposComponent } from './Components/user-repos/user-repos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     CardGridComponent,
-    CardComponent
+    CardComponent,
+    UserReposComponent
   ],
   imports: [
     BrowserModule,
